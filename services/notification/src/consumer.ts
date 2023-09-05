@@ -1,7 +1,7 @@
 import amqp, { Message } from 'amqplib/callback_api'
 
 export const createConsumer = (amqpUrl: string, queueName: string) => {
-    console.log('\nConnecting to RabbitMQ ... ')
+    console.log('\n[consumer] Connecting to RabbitMQ ... ')
     return () => {
         amqp.connect(amqpUrl, (errConnect, connection) => {
             if (errConnect) {
@@ -15,7 +15,7 @@ export const createConsumer = (amqpUrl: string, queueName: string) => {
 
                 channel.assertQueue(queueName, { durable: true })
 
-                console.log('Connected to RabbitMQ')
+                console.log('[consumer] Connected to RabbitMQ')
 
                 channel.consume(
                     queueName,
