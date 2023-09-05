@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "base",
+  "workspaces": [
+    "services/*"
+  ],
+  "author": {
+    "name": "ggichuru",
+    "email": "ggichuru.dev@gmail.com"
+  },
+  "scripts": {
+    "svr:auth": "yarn workspace auth run serve",
+    "svr:notif": "yarn workspace notification run serve"
+  }
+}
